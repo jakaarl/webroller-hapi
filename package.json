@@ -1,0 +1,25 @@
+{
+  "name": "webroller-hapi",
+  "version": "0.1.0",
+  "description": "Webroller Server",
+  "engines": {
+    "node": "^6.10.3"
+  },
+  "scripts": {
+    "compile": "tsc --target es6 --outDir ./build --module commonjs ./src/*.ts",
+    "start": "nodemon -e ts --exec \"npm run server\"",
+    "server": "npm run compile && node ./build/server.js"
+  },
+  "author": "Jani Kaarela",
+  "license": "ISC",
+  "dependencies": {
+    "hapi": "^16.1.1"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^6.0.76",
+    "mocha": "^3.3.0",
+    "nodemon": "^1.11.0",
+    "typescript": "^2.3.4"
+  }
+}
