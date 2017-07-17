@@ -1,0 +1,19 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+        "indent": [true, "spaces"],
+        "max-line-length": {
+            "options": [120]
+        },
+        "no-any": true,
+        "no-eval": true,
+        "no-magic-numbers": true,
+        "no-reference": true,
+        "no-var-keyword": true
+    },
+    "rulesDirectory": []
+}
