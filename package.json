@@ -6,20 +6,30 @@
     "node": "^6.10.3"
   },
   "scripts": {
-    "compile": "tsc --target es6 --outDir ./build --module commonjs ./src/*.ts",
+    "clean": "rimraf build/*",
+    "compile": "tsc -p ./src && tslint",
     "start": "nodemon -e ts --exec \"npm run server\"",
-    "server": "npm run compile && node ./build/server.js"
+    "server": "npm run compile && node ./build/main/server.js",
+    "test": "npm run compile && mocha --recursive ./build/test/"
   },
   "author": "Jani Kaarela",
   "license": "ISC",
   "dependencies": {
-    "hapi": "^16.1.1"
+    "hapi": "^16.1.1",
+    "nodemailer": "^4.0.1",
+    "socket.io": "^2.0.3",
+    "uuid": "^3.1.0",
+    "xregexp": "^3.2.0"
   },
   "devDependencies": {
     "@types/mocha": "^2.2.41",
     "@types/node": "^6.0.76",
+    "@types/uuid": "^3.0.0",
+    "@types/xregexp": "^3.0.28",
     "mocha": "^3.3.0",
     "nodemon": "^1.11.0",
+    "rimraf": "^2.6.1",
+    "tslint": "^5.4.3",
     "typescript": "^2.3.4"
   }
 }
